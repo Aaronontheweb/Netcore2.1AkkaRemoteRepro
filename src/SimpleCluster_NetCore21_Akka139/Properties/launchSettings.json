@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "SimpleCluster": {
+      "commandName": "Project",
+      "commandLineArgs": "2551",
+					"environmentVariables": {
+						"CLUSTER_IP": "localhost",
+						"CLUSTER_PORT": "2551",
+						"CLUSTER_SEEDS": "akka.tcp://ClusterSystem@localhost:2551"
+					}
+    }
+  }
+}

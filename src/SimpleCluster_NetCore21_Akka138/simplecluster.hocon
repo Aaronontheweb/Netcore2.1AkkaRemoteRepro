@@ -1,0 +1,18 @@
+﻿akka {
+	actor {
+		provider = cluster
+	}
+            
+	remote {
+		log-remote-lifecycle-events = DEBUG
+		dot-netty.tcp {
+			hostname = "localhost"
+			port = 2552
+		}
+	}
+
+	cluster {
+		seed-nodes = ["akka.tcp://cluster-system@localhost:2552"]
+		roles = [ seed ]
+	}
+}
