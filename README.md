@@ -1,4 +1,4 @@
-Follow these directions to get Minikube set up, then to create and deploy a working cluster example, followed by a non-functioning cluster example. To accompany the issue in the Akka.NET github here: https://github.com/akkadotnet/akka.net/issues/3598
+Follow these directions to get Minikube set up, then to create and deploy a working cluster example, followed by a non-functioning cluster example. 
 
 1. Install minikube with choco  
 `choco install minikube`
