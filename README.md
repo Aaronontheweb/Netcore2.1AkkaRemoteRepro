@@ -16,6 +16,14 @@ Follow these directions to get Minikube set up, then to create and deploy a work
 `minikube docker-env | Invoke-Expression`
 
 At this point we have Minikube installed and Powershell configured to run inside the VM with K8s running on it.
+```
+Members: 3
+Unreachable: 0
+Leader: cluster-seed-netcore20-akka138-0.cluster-seed-netcore20-akka138
+akka.tcp://cluster-system@cluster-seed-netcore20-akka138-0.cluster-seed-netcore20-akka138:2550: Up
+akka.tcp://cluster-system@cluster-seed-netcore20-akka138-1.cluster-seed-netcore20-akka138:2550: Up
+akka.tcp://cluster-system@cluster-seed-netcore20-akka138-2.cluster-seed-netcore20-akka138:2550: Up
+```
 
 6. CD to the root of the project    
 `cd .\SoftwareProjects\akka-cluster-issue\`
