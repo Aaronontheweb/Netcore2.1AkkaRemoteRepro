@@ -17,4 +17,4 @@ RUN dotnet publish /${sc} --output /publish
 FROM microsoft/dotnet:2.1-runtime
 WORKDIR /publish
 COPY --from=builder /publish .
-ENTRYPOINT [ "dotnet", "SimpleCluster.dll" ]
+ENTRYPOINT [ "dotnet", "SimpleCluster_NetCore21_Akka139.dll" ]
