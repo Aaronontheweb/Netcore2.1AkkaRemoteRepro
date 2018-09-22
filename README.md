@@ -16,14 +16,6 @@ Follow these directions to get Minikube set up, then to create and deploy a work
 `minikube docker-env | Invoke-Expression`
 
 At this point we have Minikube installed and Powershell configured to run inside the VM with K8s running on it.
-```
-Members: 3
-Unreachable: 0
-Leader: cluster-seed-netcore20-akka138-0.cluster-seed-netcore20-akka138
-akka.tcp://cluster-system@cluster-seed-netcore20-akka138-0.cluster-seed-netcore20-akka138:2550: Up
-akka.tcp://cluster-system@cluster-seed-netcore20-akka138-1.cluster-seed-netcore20-akka138:2550: Up
-akka.tcp://cluster-system@cluster-seed-netcore20-akka138-2.cluster-seed-netcore20-akka138:2550: Up
-```
 
 6. CD to the root of the project    
 `cd .\SoftwareProjects\akka-cluster-issue\`
@@ -38,6 +30,14 @@ akka.tcp://cluster-system@cluster-seed-netcore20-akka138-2.cluster-seed-netcore2
 `kubectl logs cluster-seed-netcore20-akka138-0 -f`
 
 You should see a healthy cluster with three members up.
+```
+Members: 3
+Unreachable: 0
+Leader: cluster-seed-netcore20-akka138-0.cluster-seed-netcore20-akka138
+akka.tcp://cluster-system@cluster-seed-netcore20-akka138-0.cluster-seed-netcore20-akka138:2550: Up
+akka.tcp://cluster-system@cluster-seed-netcore20-akka138-1.cluster-seed-netcore20-akka138:2550: Up
+akka.tcp://cluster-system@cluster-seed-netcore20-akka138-2.cluster-seed-netcore20-akka138:2550: Up
+```
 
 10. build image for .NET Core 2.0 and Akka.NET 1.3.9  
 `docker build --rm --no-cache -t cluster-issue-netcore21-akka139:0.0.1 .\src\SimpleCluster_NetCore21_Akka139\`
