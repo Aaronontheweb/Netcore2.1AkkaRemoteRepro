@@ -5,8 +5,8 @@
       "commandLineArgs": "2551",
       "environmentVariables": {
         "CLUSTER_IP": "localhost",
-        "CLUSTER_PORT": "2551",
-        "CLUSTER_SEEDS": "akka.tcp://cluster-system@localhost:2551"
+        "CLUSTER_PORT": "2550",
+        "CLUSTER_SEEDS": "akka.tcp://cluster-system@localhost:2550"
       }
     }
   }

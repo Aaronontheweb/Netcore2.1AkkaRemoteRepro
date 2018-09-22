@@ -20,7 +20,7 @@ namespace SimpleCluster_NetCore20_Akka138
 		
 			var hocon = ConfigurationFactory.ParseString(File.ReadAllText("simplecluster.hocon"));
 
-			ClusterSystem = ActorSystem.Create("ClusterSystem", hocon.BootstrapFromDocker());
+			ClusterSystem = ActorSystem.Create("cluster-system", hocon.BootstrapFromDocker());
 			ClusterSystem.ActorOf(SimpleClusterListener.Props, "clusterListener");
 
 			Task.Run(async () =>

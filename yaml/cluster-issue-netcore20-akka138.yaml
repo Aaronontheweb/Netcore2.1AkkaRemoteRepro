@@ -1,0 +1,49 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: cluster-seed-netcore20-akka138
+  labels:
+    app: cluster-seed-netcore20-akka138
+spec:
+  ports:
+  - port: 2550
+    protocol: TCP
+    targetPort: 2550
+  selector:
+    cluster: node
+  clusterIP: None
+---
+apiVersion: apps/v1beta1
+kind: StatefulSet
+metadata:
+  name: cluster-seed-netcore20-akka138
+  labels:
+    app: cluster-seed-netcore20-akka138
+spec:
+  serviceName: cluster-seed-netcore20-akka138
+  replicas: 3
+  selector:
+    matchLabels:
+      cluster: node
+  template:
+    metadata:
+      labels:
+        cluster: node
+    spec:
+      containers:
+      - name: cluster-seed-netcore20-akka138
+        image: cluster-issue-netcore20-akka138:0.0.1
+        env:
+        - name: POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: CLUSTER_SEEDS
+          value: akka.tcp://cluster-system@cluster-seed-netcore20-akka138-0.cluster-seed-netcore20-akka138:2550,akka.tcp://cluster-system@cluster-seed-netcore20-akka138-1.cluster-seed-netcore20-akka138:2550,akka.tcp://cluster-system@cluster-seed-netcore20-akka138-1.cluster-seed-netcore20-akka138:2550
+        command: [ "/bin/sh", "-c", "CLUSTER_IP=${POD_NAME}.cluster-seed-netcore20-akka138 dotnet SimpleCluster_NetCore20_Akka138.dll"]
+        livenessProbe:
+          tcpSocket:
+            port: 2550
+        ports:
+        - containerPort: 2550
+          protocol: TCP
