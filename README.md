@@ -1,4 +1,4 @@
-Follow these directions to get Minikube set up and to create and deply a working cluster example, followed by a non-functional cluster example.
+Follow these directions to get Minikube set up, then to create and deploy a working cluster example, followed by a non-functional cluster example.
 
 1. Install minikube with choco  
 `choco install minikube`
