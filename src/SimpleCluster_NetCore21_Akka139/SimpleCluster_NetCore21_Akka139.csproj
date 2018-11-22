@@ -7,7 +7,7 @@
 
   <ItemGroup>
     <PackageReference Include="akka.Bootstrap.Docker" Version="0.1.3" />
-    <PackageReference Include="Akka.Cluster" Version="1.3.11-beta636770582731969984" />
+    <PackageReference Include="Akka.Cluster" Version="1.3.11-beta636785197642942834" />
   </ItemGroup>
 
   <ItemGroup>
