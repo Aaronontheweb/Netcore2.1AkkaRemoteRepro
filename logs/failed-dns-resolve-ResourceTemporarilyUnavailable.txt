@@ -1,0 +1,74 @@
+Seed node:
+
+[WARNING][11/24/2018 18:49:24][Thread 0008][remoting] Tried to associate with unreachable remote address [akka.tcp://cluster-system@cluster-seed-netcore21-akka138-1.cluster-seed-netcore21-akka138:2552]. Address is now gated for 5000 ms, all messages to this address will be delivered to dead letters. Reason: [Association failed with akka.tcp://cluster-system@cluster-seed-netcore21-akka138-1.cluster-seed-netcore21-akka138:2552] Caused by: [System.AggregateException: One or more errors occurred. (Resource temporarily unavailable) ---> System.Net.Internals.SocketExceptionFactory+ExtendedSocketException: Resource temporarily unavailable
+   at System.Net.Dns.InternalGetHostByName(String hostName)
+   at System.Net.Dns.ResolveCallback(Object context)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Net.Dns.HostResolutionEndHelper(IAsyncResult asyncResult)
+   at System.Net.Dns.EndGetHostEntry(IAsyncResult asyncResult)
+   at System.Net.Dns.<>c.<GetHostEntryAsync>b__27_1(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Akka.Remote.Transport.DotNetty.DotNettyTransport.ResolveNameAsync(DnsEndPoint address, AddressFamily addressFamily)
+   at Akka.Remote.Transport.DotNetty.DotNettyTransport.DnsToIPEndpoint(DnsEndPoint dns)
+   at Akka.Remote.Transport.DotNetty.TcpTransport.MapEndpointAsync(EndPoint socketAddress)
+   at Akka.Remote.Transport.DotNetty.TcpTransport.AssociateInternal(Address remoteAddress)
+   at Akka.Remote.Transport.DotNetty.DotNettyTransport.Associate(Address remoteAddress)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at Akka.Remote.Transport.ProtocolStateActor.<>c.<InitializeFSM>b__11_54(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+---> (Inner Exception #0) System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (00000001, 11): Resource temporarily unavailable
+   at System.Net.Dns.InternalGetHostByName(String hostName)
+   at System.Net.Dns.ResolveCallback(Object context)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Net.Dns.HostResolutionEndHelper(IAsyncResult asyncResult)
+   at System.Net.Dns.EndGetHostEntry(IAsyncResult asyncResult)
+   at System.Net.Dns.<>c.<GetHostEntryAsync>b__27_1(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Akka.Remote.Transport.DotNetty.DotNettyTransport.ResolveNameAsync(DnsEndPoint address, AddressFamily addressFamily)
+   at Akka.Remote.Transport.DotNetty.DotNettyTransport.DnsToIPEndpoint(DnsEndPoint dns)
+   at Akka.Remote.Transport.DotNetty.TcpTransport.MapEndpointAsync(EndPoint socketAddress)
+   at Akka.Remote.Transport.DotNetty.TcpTransport.AssociateInternal(Address remoteAddress)
+   at Akka.Remote.Transport.DotNetty.DotNettyTransport.Associate(Address remoteAddress)<---
+
+   Failed node:
+   Initializing
+RunSingle
+[Docker-Bootstrap] IP=cluster-seed-netcore21-akka138-1.cluster-seed-netcore21-akka138
+[Docker-Bootstrap] PORT=
+[Docker-Bootstrap] SEEDS=akka.tcp://cluster-system@cluster-seed-netcore21-akka138-0.cluster-seed-netcore21-akka138:2552,akka.tcp://cluster-system@cluster-seed-netcore21-akka138-1.cluster-seed-netcore21-akka138:2552,akka.tcp://cluster-system@cluster-seed-netcore21-akka138-1.cluster-seed-netcore21-akka138:2552
+[INFO][11/24/2018 18:49:16][Thread 0001][remoting] Starting remoting
+[INFO][11/24/2018 18:49:17][Thread 0001][remoting] Remoting started; listening on addresses : [akka.tcp://cluster-system@cluster-seed-netcore21-akka138-1.cluster-seed-netcore21-akka138:2552]
+[INFO][11/24/2018 18:49:17][Thread 0001][remoting] Remoting now listens on addresses: [akka.tcp://cluster-system@cluster-seed-netcore21-akka138-1.cluster-seed-netcore21-akka138:2552]
+[INFO][11/24/2018 18:49:17][Thread 0001][Cluster] Cluster Node [akka.tcp://cluster-system@cluster-seed-netcore21-akka138-1.cluster-seed-netcore21-akka138:2552] - Starting up...
+[INFO][11/24/2018 18:49:17][Thread 0001][Cluster] Cluster Node [akka.tcp://cluster-system@cluster-seed-netcore21-akka138-1.cluster-seed-netcore21-akka138:2552] - Started up successfully
+Members: 0
+Unreachable: 0
+Leader: no leader
+Members: 0
+Unreachable: 0
+Leader: no leader
+Members: 0
+Unreachable: 0
+Leader: no leader
+[WARNING][11/24/2018 18:49:27][Thread 0004][[akka://cluster-system/system/cluster/core/daemon/joinSeedNodeProcess-1#1215423967]] Couldn't join seed nodes after [2] attempts, will try again. seed-nodes=[akka.tcp://cluster-system@cluster-seed-netcore21-akka138-0.cluster-seed-netcore21-akka138:2552]
+Members: 0
+Unreachable: 0
+Leader: no leader
+[WARNING][11/24/2018 18:49:32][Thread 0003][[akka://cluster-system/system/cluster/core/daemon/joinSeedNodeProcess-1#1215423967]] Couldn't join seed nodes after [3] attempts, will try again. seed-nodes=[akka.tcp://cluster-system@cluster-seed-netcore21-akka138-0.cluster-seed-netcore21-akka138:2552]
+Members: 0
+Unreachable: 0
+Leader: no leader
+[WARNING][11/24/2018 18:49:37][Thread 0010][[akka://cluster-system/system/cluster/core/daemon/joinSeedNodeProcess-1#1215423967]] Couldn't join seed nodes after [4] attempts, will try again. seed-nodes=[akka.tcp://cluster-system@cluster-seed-netcore21-akka138-0.cluster-seed-netcore21-akka138:2552]
+Members: 0
+Unreachable: 0
+Leader: no leader
+[WARNING][11/24/2018 18:49:42][Thread 0018][[akka://cluster-system/system/cluster/core/daemon/joinSeedNodeProcess-1#1215423967]] Couldn't join seed nodes after [5] attempts, will try again. seed-nodes=[akka.tcp://cluster-system@cluster-seed-netcore21-akka138-0.cluster-seed-netcore21-akka138:2552]
+Members: 0
+Unreachable: 0
+Leader: no leader

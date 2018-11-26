@@ -39,7 +39,7 @@ spec:
             fieldRef:
               fieldPath: metadata.name
         - name: CLUSTER_SEEDS
-          value: akka.tcp://cluster-system@cluster-seed-netcore21-akka138-0.cluster-seed-netcore21-akka138:2552,akka.tcp://cluster-system@cluster-seed-netcore21-akka138-1.cluster-seed-netcore21-akka138:2552,akka.tcp://cluster-system@cluster-seed-netcore21-akka138-1.cluster-seed-netcore21-akka138:2552
+          value: akka.tcp://cluster-system@cluster-seed-netcore21-akka138-0.cluster-seed-netcore21-akka138:2552
         command: [ "/bin/sh", "-c", "CLUSTER_IP=${POD_NAME}.cluster-seed-netcore21-akka138 dotnet SimpleCluster_NetCore21_Akka138.dll"]
         livenessProbe:
           tcpSocket:
