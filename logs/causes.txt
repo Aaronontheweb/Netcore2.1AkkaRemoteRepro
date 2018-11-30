@@ -1,0 +1,3 @@
+DotNetty DNS bind failure on listen / server startup
+
+Tranport fails to start due to bind failure and thus can't pro-actively reconnect
