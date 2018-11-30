@@ -1,4 +1,5 @@
 ﻿akka {
+	loglevel = DEBUG
 	actor {
 		provider = cluster
 	}
@@ -8,6 +9,7 @@
 		dot-netty.tcp {
 			hostname = "localhost"
 			port = 2552
+			log-transport = true
 		}
 	}
 

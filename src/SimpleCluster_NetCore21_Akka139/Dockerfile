@@ -4,6 +4,8 @@ ARG sc=/src/SimpleCluster
 
 # copy project files to image
 COPY *.csproj ${sc}/
+COPY NuGet/*.nupkg ${sc}/NuGet/
+COPY NuGet.config ${sc}/
 
 ## Restore packages
 RUN dotnet restore /${sc} 

@@ -32,7 +32,7 @@ spec:
     spec:
       containers:
       - name: cluster-seed-netcore21-akka138
-        image: cluster-issue-netcore21-akka138:0.0.1
+        image: cluster-issue-netcore21-akka138:0.0.2
         env:
         - name: POD_NAME
           valueFrom:
